@@ -1,4 +1,3 @@
-import React from 'react';
 
 // Define fixed positions and sizes for images
 const imagePositions = [

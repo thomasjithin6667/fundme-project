@@ -50,7 +50,6 @@ export default function Component() {
     // Clear interval on component unmount
     return () => clearInterval(interval);
   }, []);
-  const recipientPhoneNumber =9895605077
   
   return (
     <div className="flex flex-col min-h-screen bg-background">

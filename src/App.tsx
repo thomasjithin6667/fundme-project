@@ -303,91 +303,7 @@ export default function Component() {
         </section>
 
     
- <section
-          id="details"
-          className="w-full py-12 md:py-24 lg:py-32 flex items-center   bg-muted  justify-center min-h-screen"
-        >
-          <div className="container max-w-6xl px-4 md:px-6 lg:px-2">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-20 items-start">
-              <div className="space-y-4">
-                <div className="flex items-center gap-4">
-                  <MdOutlineLocalHospital
-                    className="h-6 w-6 text-primary"
-                    style={{ color: "#0A8537" }}
-                  />
-                  <div>
-                    <p className="font-semibold">
-                      {" "}
-                      Hospital and Doctor Details
-                    </p>
-                    <p className="text-muted-foreground">
-                      Dr.Shirisha Rani
-                      <br />
-                      Paediatric Haematologist and Oncologist
-                      <br />
-                      Rainbow Children’s Hospital
-                      <br />
-                      Banjara Hills, Road no 2, Near Hotel Park Hyatt,
-                      <br />
-                      Hyderabad, Telangana, 500034
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="flex-col ">
-                    <RiParentLine
-                      className="h-6 w-6 text-primary"
-                      style={{ color: "#0A8537" }}
-                    />
-                  </div>
- 
-                  {/* < className="h-6 w-6 text-primary" style={{color:"#0A8537"}}  /> */}
-                  <div>
-                    <p className="font-semibold">Parent Details</p>
-                    <div className="flex flex-col sm:flex-row gap-4 lg:gap-12">
- 
-                      <div>
-                        <p className="font-bold text-gray-500">Father</p>
- 
-                        <p className="text-muted-foreground">
-                          Cherlapalli Sridhar Goud
-                          <br />
-                          Senior Software Engineer
-                          <br />
-                          AFC Digital Pvt Ltd
-                          <br />
-                          Mob: 9182385109
-                        </p>
-                      </div>
-                      <div>
-                        <p className="font-bold text-gray-500">Mother</p>
- 
-                        <p className=" text-muted-foreground">
-                          Cherlapalli Manasa
-                          <br />
-                          Housewife
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
- 
-              <div className="space-y-4">
-                {/* <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">
-                  Hospital and Doctor details
-                </div> */}
-                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl lg:text-5xl">
-  Together, We Can Bring Hope
-</h2>
-<p className="max-w-[600px] text-muted-foreground md:text-xl lg:text-base xl:text-xl">
-  Each donation, regardless of its size, contributes to Priyansh's journey towards recovery. Your support is a beacon of hope, providing crucial care and a chance for a brighter future.
-</p>
- 
-              </div>
-            </div>
-          </div>
-        </section>
+
  
 
  
@@ -532,12 +448,27 @@ export default function Component() {
         </section>
  
 
-        <section
-          id="details"
+        <section  id="details"
           className="w-full py-12 md:py-24 lg:py-32 flex items-center   bg-muted  justify-center min-h-screen"
         >
           <div className="container max-w-6xl px-4 md:px-6 lg:px-2">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-20 items-start">
+ 
+              <div className="block lg:hidden space-y-4">
+                {/* <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">
+                  Hospital and Doctor details
+                </div> */}
+                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl lg:text-5xl">
+                  Together, We Can Bring Hope
+                </h2>
+                <p className="max-w-[600px] text-muted-foreground md:text-xl lg:text-base xl:text-xl">
+                  Each donation, regardless of its size, contributes to
+                  Priyansh's journey towards recovery. Your support is a beacon
+                  of hope, providing crucial care and a chance for a brighter
+                  future.
+                </p>
+              </div>
+ 
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
                   <MdOutlineLocalHospital
@@ -573,7 +504,6 @@ export default function Component() {
                   <div>
                     <p className="font-semibold">Parent Details</p>
                     <div className="flex flex-col sm:flex-row gap-4 lg:gap-12">
- 
                       <div>
                         <p className="font-bold text-gray-500">Father</p>
  
@@ -601,17 +531,19 @@ export default function Component() {
                 </div>
               </div>
  
-              <div className="space-y-4">
+              <div className="hidden lg:block space-y-4 ">
                 {/* <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">
                   Hospital and Doctor details
                 </div> */}
                 <h2 className="text-3xl font-bold tracking-tighter md:text-4xl lg:text-5xl">
-  Together, We Can Bring Hope
-</h2>
-<p className="max-w-[600px] text-muted-foreground md:text-xl lg:text-base xl:text-xl">
-  Each donation, regardless of its size, contributes to Priyansh's journey towards recovery. Your support is a beacon of hope, providing crucial care and a chance for a brighter future.
-</p>
- 
+                  Together, We Can Bring Hope
+                </h2>
+                <p className="max-w-[600px] text-muted-foreground md:text-xl lg:text-base xl:text-xl">
+                  Each donation, regardless of its size, contributes to
+                  Priyansh's journey towards recovery. Your support is a beacon
+                  of hope, providing crucial care and a chance for a brighter
+                  future.
+                </p>
               </div>
             </div>
           </div>

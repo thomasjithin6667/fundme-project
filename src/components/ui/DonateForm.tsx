@@ -62,15 +62,10 @@ const DonateForm = () => {
       
       <div className="hide-on-desktop">
       <div className="donate-amount-buttons d-flex justify-between w-full my-7 ">
-        <button
-          onClick={() => handlePresetAmountClick('500')}
-          className="inline-flex h-10 items-center justify-center rounded-md border border-input bg-background px-8 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
-        >
-          ₹500
-        </button>
+  
         <button
           onClick={() => handlePresetAmountClick('1000')}
-          className="ms-3 inline-flex h-10 items-center justify-center rounded-md border border-input bg-background px-8 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+          className="inline-flex h-10 items-center justify-center rounded-md border border-input bg-background px-8 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
         >
           ₹1000
         </button>
@@ -97,7 +92,7 @@ const DonateForm = () => {
         <button
           onClick={() => openGooglePay(amount)}
           style={{ backgroundColor: '#0A8537' }}
-          className="ms-3 inline-flex w-full mb-4 h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+          className=" inline-flex w-full mb-4 h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
         >
           Donate Now
         </button>

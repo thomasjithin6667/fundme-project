@@ -15,10 +15,11 @@ import Autoplay from "embla-carousel-autoplay";
 import FundraisedSection from "./components/ui/FundRaised";
 import { RiParentLine } from "react-icons/ri";
 import { MdOutlineLocalHospital } from "react-icons/md";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { toast, Toaster } from "sonner";
 import DonateForm from "./components/ui/DonateForm";
-
+import { FaRegCopy } from "react-icons/fa";
+import { FaCopy } from "react-icons/fa";
 export function Example() {
   return (
     <Carousel
@@ -76,6 +77,25 @@ export default function Component() {
     return () => clearInterval(interval);
   }, []);
 
+  const CopyButton = ({ text }:any) => {
+    const [buttonText, setButtonText] = useState(<FaRegCopy />);
+   
+    const copyToClipboard = () => {
+      navigator.clipboard.writeText(text);
+      setButtonText(<FaCopy />);
+      // Reset button text after 2 seconds
+      setTimeout(() => setButtonText(<FaRegCopy />), 2000);
+    };
+   
+    return (
+      <button
+        onClick={copyToClipboard}
+        className="ml-2 p-1 items-center justify-center rounded-md border border-input bg-background text-gray border rounded  shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+      >
+        {buttonText}
+      </button>
+    );
+  };
 
 
   return (
@@ -282,25 +302,103 @@ export default function Component() {
           </div>
         </section>
 
-        <section
+    
+ <section
+          id="details"
+          className="w-full py-12 md:py-24 lg:py-32 flex items-center   bg-muted  justify-center min-h-screen"
+        >
+          <div className="container max-w-6xl px-4 md:px-6 lg:px-2">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-20 items-start">
+              <div className="space-y-4">
+                <div className="flex items-center gap-4">
+                  <MdOutlineLocalHospital
+                    className="h-6 w-6 text-primary"
+                    style={{ color: "#0A8537" }}
+                  />
+                  <div>
+                    <p className="font-semibold">
+                      {" "}
+                      Hospital and Doctor Details
+                    </p>
+                    <p className="text-muted-foreground">
+                      Dr.Shirisha Rani
+                      <br />
+                      Paediatric Haematologist and Oncologist
+                      <br />
+                      Rainbow Children’s Hospital
+                      <br />
+                      Banjara Hills, Road no 2, Near Hotel Park Hyatt,
+                      <br />
+                      Hyderabad, Telangana, 500034
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="flex-col ">
+                    <RiParentLine
+                      className="h-6 w-6 text-primary"
+                      style={{ color: "#0A8537" }}
+                    />
+                  </div>
+ 
+                  {/* < className="h-6 w-6 text-primary" style={{color:"#0A8537"}}  /> */}
+                  <div>
+                    <p className="font-semibold">Parent Details</p>
+                    <div className="flex flex-col sm:flex-row gap-4 lg:gap-12">
+ 
+                      <div>
+                        <p className="font-bold text-gray-500">Father</p>
+ 
+                        <p className="text-muted-foreground">
+                          Cherlapalli Sridhar Goud
+                          <br />
+                          Senior Software Engineer
+                          <br />
+                          AFC Digital Pvt Ltd
+                          <br />
+                          Mob: 9182385109
+                        </p>
+                      </div>
+                      <div>
+                        <p className="font-bold text-gray-500">Mother</p>
+ 
+                        <p className=" text-muted-foreground">
+                          Cherlapalli Manasa
+                          <br />
+                          Housewife
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+ 
+              <div className="space-y-4">
+                {/* <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">
+                  Hospital and Doctor details
+                </div> */}
+                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl lg:text-5xl">
+  Together, We Can Bring Hope
+</h2>
+<p className="max-w-[600px] text-muted-foreground md:text-xl lg:text-base xl:text-xl">
+  Each donation, regardless of its size, contributes to Priyansh's journey towards recovery. Your support is a beacon of hope, providing crucial care and a chance for a brighter future.
+</p>
+ 
+              </div>
+            </div>
+          </div>
+        </section>
+ 
+
+ 
+
+  <section
           id="donate"
           className="w-full py-12 md:py-24 lg:py-32 flex items-center justify-center min-h-screen"
         >
           <div className="container max-w-6xl px-4 md:px-6 lg:px-2">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-20 items-start">
-              {/* <div className="space-y-4">
-                <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">
-                  Donate Now
-                </div>
-                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl lg:text-5xl">
-                  Your Donation Can Make a Difference
-                </h2>
-                <p className="max-w-[600px] text-muted-foreground md:text-xl lg:text-base xl:text-xl">
-                  Every contribution, no matter the size, can help provide the
-                  necessary treatment and support for Priyansh. Your generosity
-                  can give them a fighting chance.
-                </p>
-              </div> */}
+         
               <DonateForm/>
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
@@ -311,11 +409,33 @@ export default function Component() {
                   <div>
                     <p className="font-semibold">Bank Account Details</p>
                     <p className="text-muted-foreground">
-                      Account Name: Cherlapalli Sridhar Goud
-                      <br />
-                      Account Number: 2498101064349
-                      <br />
-                      IFSC Code: CNRB0002498
+                      <p className="mt-2 flex flex-col lg:flex-row lg:items-center">
+                        <span className="lg:mr-2">Account Name:</span>
+                        <span className="flex flex-col md:flex-row lg:items-center">
+                          <span>
+                            Cherlapalli Sridhar Goud{" "}
+                            <CopyButton text="Cherlapalli Sridhar Goud" />
+                          </span>
+                        </span>
+                      </p>
+                      <p className="mt-2 flex flex-col lg:flex-row lg:items-center">
+                        <span className="lg:mr-2">Account Number:</span>
+                        <span className="flex flex-col md:flex-row lg:items-center">
+                          <span>
+                            2498101064349
+                            <CopyButton text="2498101064349" />
+                          </span>
+                        </span>
+                      </p>
+                      <p className="mt-2 flex flex-col lg:flex-row lg:items-center">
+                        <span className="lg:mr-2">IFSC Code:</span>
+                        <span className="flex flex-col md:flex-row lg:items-center">
+                          <span>
+                            CNRB0002498
+                            <CopyButton text="CNRB0002498" />
+                          </span>
+                        </span>
+                      </p>
                     </p>
                   </div>
                 </div>
@@ -330,17 +450,50 @@ export default function Component() {
                       style={{ color: "#0A8537" }}
                     />
                   </div>
-
-                  {/* < className="h-6 w-6 text-primary" style={{color:"#0A8537"}}  /> */}
+ 
+          
                   <div>
                     <p className="font-semibold">UPI Details</p>
-                    <p className="text-muted-foreground">
-                      Gpay/PhonePe Number: 8121646707
-                      <br />
-                      Gpay UPI Id: sridhargoud.cherlapalli-2@okicici
-                      <br />
-                      PhonePe UPI Id: 8121646707@ybl
-                    </p>
+                    <div className="text-muted-foreground">
+                      <div className="flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center">
+                        <div>
+                          <p className="text-muted-foreground">
+                            <p className="mt-2 flex flex-col lg:flex-row lg:items-center">
+                              <span className="lg:mr-2">
+                                {" "}
+                                Gpay / PhonePe Number:
+                              </span>
+                              <span className="flex flex-col md:flex-row lg:items-center">
+                                <span>
+                                  8121646707
+                                  <CopyButton text="8121646707" />
+                                </span>
+                              </span>
+                            </p>
+ 
+                            <p className="mt-2 flex flex-col lg:flex-row lg:items-center">
+                              <span className="lg:mr-2"> Gpay UPI Id:</span>
+                              <span className="flex flex-col md:flex-row lg:items-center">
+                                <span>
+                                  sridhargoud.cherlapalli-2@okicici{" "}
+                                  <CopyButton text="sridhargoud.cherlapalli-2@okicici" />
+                                </span>
+                              </span>
+                            </p>
+ 
+                            <p className="mt-2 flex flex-col lg:flex-row lg:items-center">
+                              <span className="lg:mr-2"> PhonePe UPI Id:</span>
+                              <span className="flex flex-col md:flex-row lg:items-center">
+                                <span>
+                                  8121646707@ybl{" "}
+                                  <CopyButton text="8121646707@ybl" />
+                                </span>
+                              </span>
+                            </p>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -377,6 +530,7 @@ export default function Component() {
             </div>
           </div>
         </section>
+ 
 
         <section
           id="details"
@@ -415,14 +569,14 @@ export default function Component() {
                       style={{ color: "#0A8537" }}
                     />
                   </div>
-
-
-                  {/* < className="h-6 w-6 text-primary" style={{color:"#0A8537"}}  /> */}
+ 
                   <div>
                     <p className="font-semibold">Parent Details</p>
-                    <div className="flex flex-col sm:flex-row gap-10">
+                    <div className="flex flex-col sm:flex-row gap-4 lg:gap-12">
+ 
                       <div>
-                        <p className="font-semibold text-muted-foreground">Father</p>
+                        <p className="font-bold text-gray-500">Father</p>
+ 
                         <p className="text-muted-foreground">
                           Cherlapalli Sridhar Goud
                           <br />
@@ -434,7 +588,8 @@ export default function Component() {
                         </p>
                       </div>
                       <div>
-                        <p className="font-semibold text-muted-foreground">Mother</p>
+                        <p className="font-bold text-gray-500">Mother</p>
+ 
                         <p className=" text-muted-foreground">
                           Cherlapalli Manasa
                           <br />
@@ -443,22 +598,20 @@ export default function Component() {
                       </div>
                     </div>
                   </div>
-
                 </div>
               </div>
-
+ 
               <div className="space-y-4">
-                <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">
+                {/* <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">
                   Hospital and Doctor details
-                </div>
+                </div> */}
                 <h2 className="text-3xl font-bold tracking-tighter md:text-4xl lg:text-5xl">
-                  Your Donation Can Make a Difference
-                </h2>
-                <p className="max-w-[600px] text-muted-foreground md:text-xl lg:text-base xl:text-xl">
-                  Every contribution, no matter the size, can help provide the
-                  necessary treatment and support for Priyansh. Your generosity
-                  can give them a fighting chance.
-                </p>
+  Together, We Can Bring Hope
+</h2>
+<p className="max-w-[600px] text-muted-foreground md:text-xl lg:text-base xl:text-xl">
+  Each donation, regardless of its size, contributes to Priyansh's journey towards recovery. Your support is a beacon of hope, providing crucial care and a chance for a brighter future.
+</p>
+ 
               </div>
             </div>
           </div>

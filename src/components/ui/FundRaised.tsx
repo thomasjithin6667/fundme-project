@@ -20,7 +20,7 @@ const imagePositions = [
 
 const FundraisedSection = () => {
   return (
-    <section id="fundraised" className="relative w-full py-24 bg-muted min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="fundraised" className="relative w-full py-24  min-h-screen flex items-center justify-center overflow-hidden">
       <div className="container flex flex-col items-center gap-6 px-4 md:px-6 lg:gap-10 z-10">
         <div className="space-y-4 text-center">
           <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">Progress</div>

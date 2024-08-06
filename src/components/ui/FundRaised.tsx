@@ -1,24 +1,25 @@
 
 // Define fixed positions and sizes for images
 const imagePositions = [
-  { size: 60, top: '10%', left: '15%' },
-  { size: 80, top: '20%', left: '50%' },
-  { size: 70, top: '30%', left: '70%' },
-  { size: 90, top: '50%', left: '25%' },
-  { size: 50, top: '69%', left: '40%' },
-  { size: 70, top: '70%', left: '60%' },
-  { size: 60, top: '80%', left: '20%' },
-  { size: 80, top: '50%', left: '80%' },
-  { size: 90, top: '30%', left: '9%' },
-  { size: 50, top: '85%', left: '70%' },
-  { size: 60, top: '60%', left: '10%' },
-  { size: 70, top: '40%', left: '90%' },
-  { size: 80, top: '80%', left: '45%' },
-  { size: 90, top: '90%', left: '60%' },
-  { size: 50, top: '10%', left: '80%' }
+  { size: 60, top: '10%', left: '15%',imageUrl:  'https://picsum.photos'},
+  { size: 70, top: '30%', left: '70%' ,imageUrl:  'https://picsum.photos'},
+  { size: 90, top: '50%', left: '25%' ,imageUrl:  'https://picsum.photos'},
+  { size: 80, top: '20%', left: '50%' ,imageUrl:  'https://picsum.photos'},
+  { size: 50, top: '69%', left: '40%' ,imageUrl:  'https://picsum.photos'},
+  { size: 70, top: '70%', left: '60%' ,imageUrl:  'https://picsum.photos'},
+  { size: 60, top: '80%', left: '20%' ,imageUrl:  'https://picsum.photos'},
+  { size: 80, top: '50%', left: '80%' ,imageUrl:  'https://picsum.photos'},
+  { size: 90, top: '30%', left: '9%' ,imageUrl:  'https://picsum.photos'},
+  { size: 50, top: '85%', left: '70%' ,imageUrl:  'https://picsum.photos'},
+  { size: 60, top: '60%', left: '10%' ,imageUrl:  'https://picsum.photos'},
+  { size: 70, top: '40%', left: '90%' ,imageUrl:  'https://picsum.photos'},
+  { size: 80, top: '80%', left: '45%' ,imageUrl:  'https://picsum.photos'},
+  { size: 90, top: '90%', left: '60%' ,imageUrl:  'https://picsum.photos'},
+  { size: 50, top: '10%', left: '80%' ,imageUrl:  'https://picsum.photos'}
 ];
 
 const FundraisedSection = () => {
+
   return (
     <section id="fundraised" className="relative w-full py-24  min-h-screen flex items-center justify-center overflow-hidden">
       <div className="container flex flex-col items-center gap-6 px-4 md:px-6 lg:gap-10 z-10">
@@ -36,9 +37,9 @@ const FundraisedSection = () => {
         {imagePositions.map((pos, index) => (
           <img
             key={index}
-            src={`https://via.placeholder.com/${pos.size}`} // Placeholder image size
+            src={`${pos.imageUrl}/${pos.size}/${pos.size}?random=1${index}`} 
             alt="floating"
-            className={`absolute rounded-full animate-float hover:animate-float-hover image-${index + 1}`}
+            className={`absolute rounded-full animate-float hover:animate-float-hover image-${index +1}`}
             style={{
               width: `${pos.size}px`,
               height: `${pos.size}px`,

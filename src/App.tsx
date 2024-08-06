@@ -17,7 +17,7 @@ import { RiParentLine } from "react-icons/ri";
 import { MdOutlineLocalHospital } from "react-icons/md";
 import { useEffect } from "react";
 import { toast, Toaster } from "sonner";
- 
+
 export function Example() {
   return (
     <Carousel
@@ -31,8 +31,9 @@ export function Example() {
     </Carousel>
   );
 }
- 
+
 export default function Component() {
+
   const messages = [
     { name: "Rahul Sharma", amount: "2300rs" },
     { name: "Priya Singh", amount: "2200rs" },
@@ -59,40 +60,40 @@ export default function Component() {
   const showToast = () => {
     const randomMessage = messages[Math.floor(Math.random() * messages.length)];
     toast.success(`${randomMessage.name} just donated ${randomMessage.amount}`);
-   
-  
+
+
   };
-  
+
   useEffect(() => {
     // Set interval to show toast every minute
     const interval = setInterval(() => {
       showToast();
-      
-    },10000); 
+
+    }, 10000);
 
     // Clear interval on component unmount
     return () => clearInterval(interval);
   }, []);
-  
+
 
 
   return (
 
     <div className="flex flex-col min-h-screen bg-background">
-          <Toaster position="bottom-left"/>
+      <Toaster position="bottom-left" />
       <header className="px-4 lg:px-6 h-14 flex items-center border-b justify-between">
         <a href="#" className="flex items-center justify-center">
           <HeartIcon className="size-6 text-primary" />
           <span className="sr-only">Fundraiser for Priyansh</span>
         </a>
- 
+
         <span style={{ width: "100%" }} className="hidden md:block">
           {/* <MessageCarousel /> */}
         </span>
- 
+
         <div className="flex items-center gap-2">
           {/* Desktop View */}
- 
+
           <div className="hidden lg:flex lg:gap-2">
             <a
               href="#donate"
@@ -108,7 +109,7 @@ export default function Component() {
               Contact
             </a>
           </div>
- 
+
           {/* Mobile View */}
           <div className="lg:hidden flex items-center gap-2">
             <a
@@ -133,7 +134,7 @@ export default function Component() {
       <div className="md:hidden text-xs ">
         <MessageCarousel />
       </div> */}
- 
+
       <main className="flex-1">
         <section className="w-full py-12 md:py-24 lg:py-24 min-h-screen flex items-center ">
           <div className="container max-w-6xl grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
@@ -165,7 +166,7 @@ export default function Component() {
                 </a>
               </div>
             </div>
- 
+
             <div className="w-full flex justify-center">
               <Carousel
                 plugins={[
@@ -208,16 +209,16 @@ export default function Component() {
             </div>
           </div>
         </section>
- 
+
         <section
           id="story"
           className="w-full py-12 md:py-24 lg:py-32 bg-muted min-h-screen flex items-center"
         >
           <div className="container max-w-6xl grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
             <div className="block sm:hidden rounded-lg bg-muted px-3 py-1 text-sm">
-            Priyansh's story by his father Cherlapalli Sridhar Goud
+              Priyansh's story by his father Cherlapalli Sridhar Goud
             </div>
- 
+
             <img
               src="https://demo.webbytemplate.com/html-templates/bootstrap/donation/images/help-2.png"
               width="500"
@@ -239,7 +240,7 @@ export default function Component() {
               <div className="hidden sm:block rounded-lg bg-muted text-sm">
                 Priyansh's story by his father Cherlapalli Sridhar Goud
               </div>
- 
+
               <h2 className="text-xl font-bold tracking-tighter md:text-xl/tight lg:text-2xl">
                 A Courageous Battle Against Blood Cancer
               </h2>
@@ -279,7 +280,7 @@ export default function Component() {
             </div>
           </div>
         </section>
- 
+
         <section
           id="donate"
           className="w-full py-12 md:py-24 lg:py-32 flex items-center justify-center min-h-screen"
@@ -327,7 +328,7 @@ export default function Component() {
                       style={{ color: "#0A8537" }}
                     />
                   </div>
- 
+
                   {/* < className="h-6 w-6 text-primary" style={{color:"#0A8537"}}  /> */}
                   <div>
                     <p className="font-semibold">UPI Details</p>
@@ -374,7 +375,7 @@ export default function Component() {
             </div>
           </div>
         </section>
- 
+
         <section
           id="details"
           className="w-full py-12 md:py-24 lg:py-32 flex items-center   bg-muted  justify-center min-h-screen"
@@ -412,38 +413,38 @@ export default function Component() {
                       style={{ color: "#0A8537" }}
                     />
                   </div>
- 
- 
+
+
                   {/* < className="h-6 w-6 text-primary" style={{color:"#0A8537"}}  /> */}
                   <div>
-  <p className="font-semibold">Parent Details</p>
-  <div className="flex flex-col sm:flex-row gap-10">
-    <div>
-      <p className="font-semibold text-muted-foreground">Father</p>
-      <p className="text-muted-foreground">
-        Cherlapalli Sridhar Goud
-        <br />
-        Senior Software Engineer
-        <br />
-        AFC Digital Pvt Ltd
-        <br />
-        Mob: 9182385109
-      </p>
-    </div>
-    <div>
-      <p className="font-semibold text-muted-foreground">Mother</p>
-      <p className=" text-muted-foreground">
-        Cherlapalli Manasa
-        <br />
-        Housewife
-      </p>
-    </div>
-  </div>
-</div>
- 
+                    <p className="font-semibold">Parent Details</p>
+                    <div className="flex flex-col sm:flex-row gap-10">
+                      <div>
+                        <p className="font-semibold text-muted-foreground">Father</p>
+                        <p className="text-muted-foreground">
+                          Cherlapalli Sridhar Goud
+                          <br />
+                          Senior Software Engineer
+                          <br />
+                          AFC Digital Pvt Ltd
+                          <br />
+                          Mob: 9182385109
+                        </p>
+                      </div>
+                      <div>
+                        <p className="font-semibold text-muted-foreground">Mother</p>
+                        <p className=" text-muted-foreground">
+                          Cherlapalli Manasa
+                          <br />
+                          Housewife
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
                 </div>
               </div>
- 
+
               <div className="space-y-4">
                 <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">
                   Hospital and Doctor details
@@ -470,4 +471,3 @@ export default function Component() {
     </div>
   );
 }
- 

@@ -87,7 +87,7 @@ export default function Component() {
               Donate
             </a>
             <a
-              href="tel:+9182385109"
+              href="#details"
               className="inline-flex h-10 items-center justify-center rounded-md border border-input bg-background px-8 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
             >
               Contact
@@ -105,7 +105,7 @@ export default function Component() {
               <BiDonateHeart className="text-2xl" />
             </a>
             <a
-              href="tel:+9182385109"
+              href="tel:9182385109"
               className="inline-flex items-center justify-center p-2 rounded-md border border-input shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
               aria-label="Contact"
             >
@@ -455,6 +455,8 @@ export default function Component() {
                       Banjara Hills, Road no 2, Near Hotel Park Hyatt,
                       <br />
                       Hyderabad, Telangana, 500034
+                      <br />
+                      Ph: 08035358317 
                     </p>
                   </div>
                 </div>

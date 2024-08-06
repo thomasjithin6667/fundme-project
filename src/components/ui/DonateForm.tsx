@@ -7,12 +7,11 @@ const DonateForm = () => {
 
   const validateAmount = (value:any) => {
     if (value.trim() === '') {
-      setIsAmountValid(true);
-      return;
-    }
-
-    const num = parseFloat(value);
-    setIsAmountValid(!isNaN(num) && num > 0);
+        setIsAmountValid(true); 
+      } else {
+        const isValid = /^[0-9]+$/.test(value) && parseFloat(value) > 0;
+        setIsAmountValid(isValid);
+      }
   };
 
   const handleChange = (e:any) => {
@@ -43,6 +42,7 @@ const DonateForm = () => {
 
   const handlePresetAmountClick = (presetAmount:any) => {
     setAmount(presetAmount);
+    validateAmount(presetAmount);
     openGooglePay(presetAmount);
   };
 
@@ -58,28 +58,27 @@ const DonateForm = () => {
         Every contribution, no matter the size, can help provide the necessary treatment and support for Priyansh. Your generosity can give them a fighting chance.
       </p>
 
-   
-      
+    
+
       <div className="hide-on-desktop">
-      <div className="donate-amount-buttons d-flex justify-between w-full my-7 ">
-  
-        <button
-          onClick={() => handlePresetAmountClick('1000')}
-          className="inline-flex h-10 items-center justify-center rounded-md border border-input bg-background px-8 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
-        >
-          ₹1000
-        </button>
+      <div className="donate-amount-buttons flex justify-between w-full space-x-4 mb-5">
         <button
           onClick={() => handlePresetAmountClick('2000')}
-          className="ms-3 inline-flex h-10 items-center justify-center rounded-md border border-input bg-background px-8 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+          className="flex-1 h-10 items-center justify-center rounded-md border border-input bg-background text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
         >
           ₹2000
         </button>
         <button
-          onClick={() => handlePresetAmountClick('3000')}
-          className="ms-3 inline-flex h-10 items-center justify-center rounded-md border border-input bg-background px-8 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+          onClick={() => handlePresetAmountClick('5000')}
+          className="flex-1 h-10 items-center justify-center rounded-md border border-input bg-background text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
         >
-          ₹3000
+          ₹5000
+        </button>
+        <button
+          onClick={() => handlePresetAmountClick('10000')}
+          className="flex-1 h-10 items-center justify-center rounded-md border border-input bg-background text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+        >
+          ₹10,000
         </button>
       </div>
         <input
@@ -87,12 +86,12 @@ const DonateForm = () => {
           value={amount}
           onChange={handleChange}
           placeholder="Enter donation amount"
-          className="border rounded-md p-2 w-full mb-3"
+          className="border rounded-md p-2 w-full mb-3 outline-none"
         />
         <button
           onClick={() => openGooglePay(amount)}
           style={{ backgroundColor: '#0A8537' }}
-          className=" inline-flex w-full mb-4 h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+          className="inline-flex w-full mb-4 h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
         >
           Donate Now
         </button>

@@ -15,8 +15,8 @@ import Autoplay from "embla-carousel-autoplay";
 import FundraisedSection from "./components/ui/FundRaised";
 import { RiParentLine } from "react-icons/ri";
 import { MdOutlineLocalHospital } from "react-icons/md";
-import { useEffect, useState } from "react";
-import { toast, Toaster } from "sonner";
+import { useState } from "react";
+
 import DonateForm from "./components/ui/DonateForm";
 import { FaRegCopy } from "react-icons/fa";
 import { FaCopy } from "react-icons/fa";
@@ -36,46 +36,9 @@ export function Example() {
 
 export default function Component() {
 
-  const messages = [
-    { name: "Rahul Sharma", amount: "2300rs" },
-    { name: "Priya Singh", amount: "2200rs" },
-    { name: "Amit Kumar", amount: "2700rs" },
-    { name: "Sneha Patel", amount: "2900rs" },
-    { name: "Ravi Verma", amount: "3200rs" },
-    { name: "Ananya Joshi", amount: "3100rs" },
-    { name: "Vikram Reddy", amount: "2800rs" },
-    { name: "Kavya Gupta", amount: "2600rs" },
-    { name: "Arjun Nair", amount: "2400rs" },
-    { name: "Meera Iyer", amount: "2500rs" },
-    { name: "Sanjay Mehta", amount: "3500rs" },
-    { name: "Nisha Chawla", amount: "3300rs" },
-    { name: "Rohit Malhotra", amount: "3000rs" },
-    { name: "Pooja Desai", amount: "2700rs" },
-    { name: "Vivek Bhatia", amount: "2900rs" },
-    { name: "Anjali Kapoor", amount: "3100rs" },
-    { name: "Ashok Jain", amount: "2500rs" },
-    { name: "Rekha Rao", amount: "3200rs" },
-    { name: "Karan Singh", amount: "2800rs" },
-    { name: "Ritu Shah", amount: "2600rs" },
-  ];
-
-  const showToast = () => {
-    const randomMessage = messages[Math.floor(Math.random() * messages.length)];
-    toast.success(`${randomMessage.name} just donated ${randomMessage.amount}`);
+ 
 
 
-  };
-
-  useEffect(() => {
-    // Set interval to show toast every minute
-    const interval = setInterval(() => {
-      showToast();
-
-    }, 10000);
-
-    // Clear interval on component unmount
-    return () => clearInterval(interval);
-  }, []);
 
   const CopyButton = ({ text }:any) => {
     const [buttonText, setButtonText] = useState(<FaRegCopy />);
@@ -101,7 +64,7 @@ export default function Component() {
   return (
 
     <div className="flex flex-col min-h-screen bg-background">
-      <Toaster position="bottom-left" />
+   
       <header className="px-4 lg:px-6 h-14 flex items-center border-b justify-between">
         <a href="#" className="flex items-center justify-center">
           <HeartIcon className="size-6 text-primary" />
@@ -161,10 +124,11 @@ export default function Component() {
           <div className="container max-w-6xl grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
             <div className="space-y-4">
               <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">
-                Fundraiser for Priyansh
+            
+                Help Provide a Fighting Chance
               </div>
               <h1 className="text-3xl font-bold tracking-tighter md:text-4xl lg:text-5xl">
-                Help Provide a Fighting Chance
+              Fundraiser for Priyansh
               </h1>
               <p className="max-w-[600px] text-muted-foreground md:text-xl lg:text-base xl:text-xl">
                 Your donation can make all the difference for a courageous child
@@ -236,7 +200,7 @@ export default function Component() {
           className="w-full py-12 md:py-24 lg:py-32 bg-muted min-h-screen flex items-center"
         >
           <div className="container max-w-6xl grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
-            <div className="block sm:hidden rounded-lg bg-muted px-3 py-1 text-sm">
+          <div className="block sm:hidden rounded-lg bg-muted px-3 py-1 text-xl font-bold tracking-tighter md:text-xl/tight lg:text-2xl">
               Priyansh's story by his father Cherlapalli Sridhar Goud
             </div>
 
@@ -258,46 +222,47 @@ export default function Component() {
               }
             />
             <div className="space-y-4">
-              <div className="hidden sm:block rounded-lg bg-muted text-sm">
+            <div className="hidden sm:block rounded-lg bg-muted text-xl font-bold tracking-tighter  lg:text-lg">
                 Priyansh's story by his father Cherlapalli Sridhar Goud
               </div>
 
               <h2 className="text-xl font-bold tracking-tighter md:text-xl/tight lg:text-2xl">
                 A Courageous Battle Against Blood Cancer
               </h2>
-              <p className="max-w-[600px] text-muted-foreground text-sm ">
-                I am writing to you with a heavy heart to share that my eldest
-                son CH. Priyansh, has been bravely fighting leukaemia for the
-                past year. This has been an incredibly challenging time for our
-                family, both emotionally and financially, as we navigate through
-                this difficult journey. over the past year, My son has undergone
-                six chemotherapy sessions, showing remarkable strength and
-                resilience throughout. We have already spent 13 lakhs on his
-                treatment, and while his courage inspires us every day, we know
-                that the road ahead is still long and demanding.
-              </p>
-              <p className="max-w-[600px] text-muted-foreground text-sm ">
-                As we continue to fight alongside my kid, the financial burden
-                has become increasingly overwhelming. We are reaching out to our
-                community for support in raising funds to help cover the ongoing
-                medical expenses and ensure he receives the best possible care.
-              </p>
-              <p className="max-w-[600px] text-muted-foreground text-sm ">
-                We have set up a fund to assist with these costs, and any
-                contribution, no matter how small, would be deeply appreciated.
-                Your generosity will allow us to focus on what truly matters:
-                supporting my son (Priyansh) through his treatment and giving
-                him every chance to overcome this illness.
-              </p>
-              <p className="max-w-[600px] text-muted-foreground text-sm ">
-                If you are unable to contribute financially, we kindly ask for
-                your thoughts and prayers on my child.
-              </p>
-              <p className="max-w-[600px] text-muted-foreground text-sm ">
-                The funds I raise are needed to help my chid to find better
-                treatment and cures for blood cancer so, he can live better,
-                longer lives.
-              </p>
+              <p className="max-w-[600px] text-muted-foreground text-sm">
+  I am writing to you with a heavy heart to share that my eldest
+  son, CH. Priyansh, has been bravely fighting leukaemia for the
+  past year. This has been an incredibly challenging time for our
+  family, both emotionally and financially, as we navigate through
+  this difficult journey. Over the past year, my son has undergone
+  six chemotherapy sessions, showing remarkable strength and
+  resilience throughout. We have already spent 13 lakhs on his
+  treatment, and while his courage inspires us every day, we know
+  that the road ahead is still long and demanding.
+</p>
+<p className="max-w-[600px] text-muted-foreground text-sm">
+  As we continue to fight alongside my child, the financial burden
+  has become increasingly overwhelming. We are reaching out to our
+  community for support in raising funds to help cover the ongoing
+  medical expenses and ensure he receives the best possible care.
+</p>
+<p className="max-w-[600px] text-muted-foreground text-sm">
+  We have set up a fund to assist with these costs, and any
+  contribution, no matter how small, would be deeply appreciated.
+  Your generosity will allow us to focus on what truly matters:
+  supporting my son, Priyansh, through his treatment and giving
+  him every chance to overcome this illness.
+</p>
+<p className="max-w-[600px] text-muted-foreground text-sm">
+  If you are unable to contribute financially, we kindly ask for
+  your thoughts and prayers for my child.
+</p>
+<p className="max-w-[600px] text-muted-foreground text-sm">
+  The funds we raise are needed to help my child find better
+  treatment and cures for blood cancer so he can live better,
+  longer lives.
+</p>
+
             </div>
           </div>
         </section>

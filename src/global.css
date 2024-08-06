@@ -163,7 +163,7 @@
 }
 
 /* Add this CSS to your stylesheet */
-.image-3,
+.image-2,
 .image-8,
 .image-11,
 .image-12,
@@ -197,3 +197,25 @@
     display: none;
   }
 }
+.waveGen {
+ 
+  padding: 20px;
+ 
+  -webkit-animation: pulse 1s infinite;
+  animation: pulse512 5s infinite;
+  }
+   
+  @keyframes pulse512 {
+  0% {
+    box-shadow: 0 0 0 0 #0A8537;
+  }
+   
+  70% {
+    box-shadow: 0 0 0 10px rgba(195, 184, 181, 0);
+  }
+   
+  100% {
+    box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
+  }
+  }
+ 

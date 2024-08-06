@@ -17,6 +17,7 @@ import { RiParentLine } from "react-icons/ri";
 import { MdOutlineLocalHospital } from "react-icons/md";
 import { useEffect } from "react";
 import { toast, Toaster } from "sonner";
+import DonateForm from "./components/ui/DonateForm";
 
 export function Example() {
   return (
@@ -287,7 +288,7 @@ export default function Component() {
         >
           <div className="container max-w-6xl px-4 md:px-6 lg:px-2">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-20 items-start">
-              <div className="space-y-4">
+              {/* <div className="space-y-4">
                 <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">
                   Donate Now
                 </div>
@@ -299,7 +300,8 @@ export default function Component() {
                   necessary treatment and support for Priyansh. Your generosity
                   can give them a fighting chance.
                 </p>
-              </div>
+              </div> */}
+              <DonateForm/>
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
                   <BanknoteIcon

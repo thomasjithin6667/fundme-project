@@ -1,14 +1,13 @@
 
 
-const DonateButton = () => {
+const DonateButton = ({ amount }:any) => {
   const openGooglePay = () => {
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
     if (isMobile) {
-      const payeeAddress = 'recipient@upi'; // Replace with the correct UPI ID
-      const payeeName = 'Recipient Name';
-      const amount = '100'; // Specify the amount
-      const currency = 'INR'; // Currency in INR (Indian Rupees)
+      const payeeAddress = 'sridhargoud.cherlapalli-2@okicici'; 
+      const payeeName = 'Cherlapalli Sridhar Goud';
+      const currency = 'INR'; 
 
       const url = `upi://pay?pa=${payeeAddress}&pn=${payeeName}&am=${amount}&cu=${currency}`;
       window.location.href = url;

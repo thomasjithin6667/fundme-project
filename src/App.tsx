@@ -6,12 +6,15 @@ import {
   // CarouselNext,
 } from "@/components/ui/carousel";
 import { BiDonateHeart } from "react-icons/bi";
+import {  toast, Toaster } from 'sonner';
 import { IoIosCall } from "react-icons/io";
 // import { Progress } from "@/components/ui/progress";
 import { BanknoteIcon, HeartIcon, QrCodeIcon } from "lucide-react";
  
 import Autoplay from "embla-carousel-autoplay";
 import FundraisedSection from "./components/ui/FundRaised";
+import { useEffect } from "react";
+import DonateButton from "./components/ui/GpayButton";
  
 export function Example() {
   return (
@@ -26,17 +29,42 @@ export function Example() {
     </Carousel>
   );
 }
+
+
+
  
 export default function Component() {
+  const showToast = () => {
+   
+    toast.success('Smitha just donated $30')
+  
+  };
+  
+  useEffect(() => {
+    // Set interval to show toast every minute
+    const interval = setInterval(() => {
+      showToast();
+      
+    },5000); 
+
+    // Clear interval on component unmount
+    return () => clearInterval(interval);
+  }, []);
+  const recipientPhoneNumber =9895605077
+  
   return (
-    <div className="flex flex-col min-h-dvh bg-background ">
+    <div className="flex flex-col min-h-screen bg-background">
+       <div>
+       <Toaster position="bottom-left"/>
+     
+    </div>
       <header className="px-4 lg:px-6 h-14 flex items-center border-b justify-between">
         <a href="#" className="flex items-center justify-center">
           <HeartIcon className="size-6 text-primary" />
           <span className="sr-only">Fundraiser for Rahul</span>
         </a>
         <div className="flex items-center gap-2">
-          {/* Desktop View */}
+        
           <div className="hidden lg:flex lg:gap-2">
             <a
               href="#donate"
@@ -45,7 +73,7 @@ export default function Component() {
               Donate Now
             </a>
             <a
-              href="#contact"
+              href="tel:+1234567890"
               className="inline-flex h-10 items-center justify-center rounded-md border border-input bg-background px-8 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
             >
               Contact
@@ -62,8 +90,8 @@ export default function Component() {
               <BiDonateHeart className="text-2xl" />
             </a>
             <a
-              href="#contact"
-              className="inline-flex items-center justify-center p-2 rounded-md border border-input   shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+              href="tel:+1234567890"
+              className="inline-flex items-center justify-center p-2 rounded-md border border-input shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
               aria-label="Contact"
             >
               <IoIosCall className="text-2xl" />
@@ -73,12 +101,13 @@ export default function Component() {
       </header>
  
       <main className="flex-1">
-        <section className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
+        <section className="w-full py-12 md:py-24 lg:py-24 min-h-screen flex items-center">
+          <div className="container max-w-6xl grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
             <div className="space-y-4">
               <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">
                 Fundraiser for Rahul
               </div>
+              <DonateButton/>
               <h1 className="text-3xl font-bold tracking-tighter md:text-4xl lg:text-5xl">
                 Help Provide a Fighting Chance
               </h1>
@@ -146,8 +175,11 @@ export default function Component() {
           </div>
         </section>
  
-        <section id="story" className="w-full py-12 md:py-24 lg:py-32 bg-muted">
-          <div className="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
+        <section
+          id="story"
+          className="w-full py-12 md:py-24 lg:py-32 bg-muted min-h-screen flex items-center"
+        >
+          <div className="container max-w-6xl grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
             <div className="block sm:hidden rounded-lg bg-muted px-3 py-1 text-sm">
               Rahul's Story
             </div>
@@ -187,11 +219,12 @@ export default function Component() {
             </div>
           </div>
         </section>
+ 
         <section
           id="donate"
-          className="w-full py-12 md:py-24 lg:py-32 flex items-center justify-center"
+          className="w-full py-12 md:py-24 lg:py-32 flex items-center justify-center min-h-screen"
         >
-          <div className="container max-w-4xl px-4 md:px-6 lg:px-2">
+          <div className="container max-w-6xl px-4 md:px-6 lg:px-2">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-20 items-start">
               <div className="space-y-4">
                 <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">
@@ -241,7 +274,7 @@ export default function Component() {
             </div>
           </div>
         </section>
-        <FundraisedSection/>
+        <FundraisedSection />
       </main>
       <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t bg-muted">
         <p className="text-xs text-muted-foreground">
@@ -251,3 +284,4 @@ export default function Component() {
     </div>
   );
 }
+ 

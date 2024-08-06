@@ -161,3 +161,34 @@
   filter: hue-rotate(90deg);
   transform: scale(1.1) translateY(-20px); /* Adjust scale and position on hover */
 }
+
+/* Add this CSS to your stylesheet */
+.image-4,
+.image-8,
+.image-11,
+.image-12,
+.image-13,
+.image-14,
+.image-15 {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .image-6,
+  .image-7,
+  .image-8,
+  .image-9,
+  .image-10 {
+    display: block;
+  }
+}
+
+@media (min-width: 1024px) {
+  .image-11,
+  .image-12,
+  .image-13,
+  .image-14,
+  .image-15 {
+    display: block;
+  }
+}

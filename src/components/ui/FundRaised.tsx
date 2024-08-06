@@ -4,19 +4,19 @@ import React from 'react';
 const imagePositions = [
   { size: 60, top: '10%', left: '15%' },
   { size: 80, top: '20%', left: '50%' },
-//   { size: 70, top: '30%', left: '70%' },
-//   { size: 90, top: '40%', left: '25%' },
-//   { size: 50, top: '60%', left: '40%' },
-//   { size: 70, top: '70%', left: '60%' },
-//   { size: 60, top: '80%', left: '20%' },
-//   { size: 80, top: '50%', left: '80%' },
-//   { size: 90, top: '30%', left: '35%' },
-//   { size: 50, top: '20%', left: '70%' },
-//   { size: 60, top: '70%', left: '10%' },
-//   { size: 70, top: '40%', left: '55%' },
-//   { size: 80, top: '80%', left: '45%' },
-//   { size: 90, top: '90%', left: '60%' },
-//   { size: 50, top: '10%', left: '80%' }
+  { size: 70, top: '30%', left: '70%' },
+  { size: 90, top: '50%', left: '25%' },
+  { size: 50, top: '69%', left: '40%' },
+  { size: 70, top: '70%', left: '60%' },
+  { size: 60, top: '80%', left: '20%' },
+  { size: 80, top: '50%', left: '80%' },
+  { size: 90, top: '30%', left: '9%' },
+  { size: 50, top: '85%', left: '70%' },
+  { size: 60, top: '60%', left: '10%' },
+  { size: 70, top: '40%', left: '90%' },
+  { size: 80, top: '80%', left: '45%' },
+  { size: 90, top: '90%', left: '60%' },
+  { size: 50, top: '10%', left: '80%' }
 ];
 
 const FundraisedSection = () => {
@@ -39,7 +39,7 @@ const FundraisedSection = () => {
             key={index}
             src={`https://via.placeholder.com/${pos.size}`} // Placeholder image size
             alt="floating"
-            className={`absolute rounded-full animate-float hover:animate-float-hover`}
+            className={`absolute rounded-full animate-float hover:animate-float-hover image-${index + 1}`}
             style={{
               width: `${pos.size}px`,
               height: `${pos.size}px`,
